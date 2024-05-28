@@ -130,8 +130,8 @@ router.post("/blrec", async (ctx) => {
   ) {
     const roomId = event.data.room_id;
 
-    const masterRes = await bili.client.live.getRoomInfo(event.data.room_id);
-    const userRes = await bili.client.live.getMasterInfo(masterRes.uid);
+    const masterRes = await bili.live.getRoomInfo(event.data.room_id);
+    const userRes = await bili.live.getMasterInfo(masterRes.uid);
 
     handle({
       event: event.type,
@@ -222,8 +222,8 @@ router.post("/webhook/blrec", async (ctx) => {
   ) {
     const roomId = event.data.room_id;
 
-    const masterRes = await bili.client.live.getRoomInfo(event.data.room_id);
-    const userRes = await bili.client.live.getMasterInfo(masterRes.uid);
+    const masterRes = await bili.live.getRoomInfo(event.data.room_id);
+    const userRes = await bili.live.getMasterInfo(masterRes.uid);
 
     handle({
       event: event.type,
